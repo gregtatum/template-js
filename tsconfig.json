@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    // Use commonjs module resolution.
-    "module": "commonjs",
+    "module": "commonjs", // Resolution strategy.
     "strict": true,
     "baseUrl": "./",
     "noEmit": true,
+    "allowJs": true, // Just add "// @ts-check"
+    "checkJs": true,
     "lib": ["esnext", "dom"],
     // paths lets you declare how TypeScript should resolve an import in
     // your require/imports.
