@@ -1,5 +1,2 @@
-import { Action } from 'src/@types';
-
-export function init(): Action {
-  return { type: 'init' };
-}
+export * from './plain';
+export * from './thunks';

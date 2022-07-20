@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 
 function init(state = false, action: T.Action): boolean {
   switch (action.type) {
-    case 'init':
+    case 'example':
       return true;
     default:
       return state;

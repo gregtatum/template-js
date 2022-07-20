@@ -6,7 +6,7 @@ describe('store', () => {
   it('can be run and initted', () => {
     const { getState, dispatch } = createStore();
     expect($.getInit(getState())).toBe(false);
-    dispatch(A.init());
+    dispatch(A.example());
     expect($.getInit(getState())).toBe(true);
   });
 });

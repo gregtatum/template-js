@@ -2,19 +2,23 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'src/store/create-store';
-import * as A from 'src/store/actions';
 import * as T from 'src/@types';
 import { App } from 'src/components/App';
 import { mockGoogleAnalytics } from 'src/utils';
 import { add, greet } from 'Cargo.toml';
 
-init();
+export * as A from 'src/store/actions';
+export * as $ from 'src/store/selectors';
+export * as T from 'src/@types';
+
+if (process.env.NODE_ENV !== 'test') {
+  init();
+}
 
 export async function init(): Promise<void> {
   mockGoogleAnalytics();
 
   const store = createStore();
-  store.dispatch(A.init());
   Object.assign(window as any, { store });
   mountReact(store);
 
