@@ -8,8 +8,7 @@
     ["module-resolver", {
       "root": ["."],
       "alias": {
-        "src": "./src",
-        "Cargo.toml": "./Cargo.toml"
+        "src": "./src"
       }
     }]
   ]

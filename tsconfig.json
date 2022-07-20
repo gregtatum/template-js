@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES2020",
     "jsx": "react",
     "module": "commonjs", // Resolution strategy.
     "strict": true,
@@ -12,7 +13,8 @@
     // your require/imports.
     "paths": {
       "src/*": [
-        "./src/*"
+        "./src/*",
+        "src/@types/globals.d.ts",
       ],
     }
   },

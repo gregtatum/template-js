@@ -3,7 +3,7 @@
 This is my template for a modren JavaScript environment, dear me.
 
 It uses:
- * Parcel for bundling and the web server.
+ * Webpack for bundling and the web server.
  * TypeScript for type checking.
  * Eslint for linting.
  * Prettier for code reformatting, powered by Eslint.
