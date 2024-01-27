@@ -1,10 +1,10 @@
 import {
-  createStore as reduxCreateStore,
+  legacy_createStore as reduxCreateStore,
   combineReducers,
   applyMiddleware,
   type Middleware,
 } from 'redux';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 import { reducers } from 'src/store/reducers';
 import { Store, Action } from 'src/@types';
 
@@ -37,7 +37,7 @@ export function createStore(): Store {
     middlewares.push(logger as any);
   }
   const store = reduxCreateStore(
-    combineReducers(reducers),
+    combineReducers(reducers) as any,
     applyMiddleware(...middlewares),
   );
 

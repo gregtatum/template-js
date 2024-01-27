@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "ES2020",
     "jsx": "react",
-    "module": "commonjs", // Resolution strategy.
+    // Use commonjs module resolution.
+    "module": "commonjs",
     "strict": true,
     "baseUrl": "./",
     "noEmit": true,
-    "allowJs": true, // Just add "// @ts-check"
+    "allowJs": true,
     "checkJs": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "dom.iterable"],
     // paths lets you declare how TypeScript should resolve an import in
     // your require/imports.
     "paths": {

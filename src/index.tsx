@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'src/store/create-store';
 import * as T from 'src/@types';
 import { App } from 'src/components/App';
-import { mockGoogleAnalytics } from 'src/utils';
+import { ensureExists, mockGoogleAnalytics } from 'src/utils';
+import { createRoot } from 'react-dom/client';
 
 export * as A from 'src/store/actions';
 export * as $ from 'src/store/selectors';
@@ -31,14 +31,10 @@ export function createRootApp(store: T.Store): JSX.Element {
 }
 
 function mountReact(store: T.Store): void {
-  const mountElement = document.createElement('div');
-  mountElement.className = 'AppRoot';
-  const body = document.body;
-  if (!body) {
-    throw new Error(
-      'Attempting to mount the <App> React component but no document body was found.',
-    );
-  }
-  body.appendChild(mountElement);
-  ReactDOM.render(createRootApp(store), mountElement);
+  const mountElement = ensureExists(
+    document.querySelector('.appRoot'),
+    'Could not find the app root',
+  );
+  const root = createRoot(mountElement);
+  root.render(createRootApp(store));
 }
